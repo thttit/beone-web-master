@@ -43,21 +43,26 @@ const OurServices = () => {
   return (
     <Box className="our-services-wrapper">
       <Box className="our-services-title" textAlign={"center"} pb={4}>
-        <Typography fontWeight={600} fontSize={"24px"}>
+        <Typography className="title" fontWeight={600} fontSize={"24px"}>
           Our Services
         </Typography>
-        <Typography color={"#f86f32"} fontWeight={600} variant="h2">
+        <Typography
+          className="second-title"
+          color={"#f86f32"}
+          fontWeight={600}
+          variant="h2"
+        >
           Make technology an asset for your business
         </Typography>
-        <Typography variant="h6">
+        <Typography className="text" variant="h6">
           Our solutions are economical, efficient, durable, flexible and allow
           the organisations to respond rapidly to both market and customer
           needs.
         </Typography>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
         {cardServiceList.map((item: any, index: any) => (
-          <Grid key={item.name} item xs={4}>
+          <Grid key={item.name} item xs={4} sm={4} md={4}>
             <CardActionArea className="card-action-service">
               <img
                 className="card-action-media"
