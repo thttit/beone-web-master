@@ -94,7 +94,7 @@ const AboutUs = () => {
       </Box>
 
       <Box className="about-wrapper">
-        <Grid container spacing={4}>
+        <Grid className="about-grid" container spacing={4}>
           <Grid item xs={6}>
             <img
               className="about-media"
@@ -102,7 +102,7 @@ const AboutUs = () => {
               alt="about"
             ></img>
           </Grid>
-          <Grid item xs={6}>
+          <Grid className="about-grid-text" item xs={6}>
             <Typography className="about-content" variant="h6">
               We won’t bring you down in the middle of the day because it is
               “Making people successful in a changing world”. We work around
