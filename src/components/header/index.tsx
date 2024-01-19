@@ -20,7 +20,14 @@ const Header = () => {
     <>
       {fullScreen ? (
         <>
-          <Card className="card-content-wrapper" sx={{ maxWidth: 320 }}>
+          <Card
+            className="card-content-wrapper"
+            sx={{
+              maxWidth: 320,
+              background: "none !important",
+              boxShadow: "none !important",
+            }}
+          >
             <CardContent sx={{ color: "black" }}>
               <Typography
                 className="content-wrapper"
