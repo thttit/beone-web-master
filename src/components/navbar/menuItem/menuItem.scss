@@ -1,0 +1,10 @@
+.list-item-menu .link {
+    text-decoration: none;
+    transition     : all 0.2s ease-in-out;
+    vertical-align : baseline;
+    color          : #4d4d4d;
+
+    &:hover {
+        color: #f86f32;
+    }
+}

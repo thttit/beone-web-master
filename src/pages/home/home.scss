@@ -1,0 +1,186 @@
+.home {
+    color : #16181a;
+    width : 100%;
+    height: auto;
+}
+
+section {
+    position : relative;
+    animation: slide-in 2s ease-in-out;
+
+}
+
+//header FORM
+.header-wrapper {
+    background-image : url('../../assets/background/header_canvas_2.png');
+    background-size  : 100% 100%;
+    background-repeat: no-repeat;
+    width            : 100%;
+    height           : 632px;
+    display          : flex;
+    justify-content  : center;
+    align-items      : center;
+    padding-bottom   : 80px;
+
+    .header-background {
+        display    : flex;
+        align-items: center;
+        overflow   : hidden;
+    }
+}
+
+.background-box {
+    .background-content {
+        .card-content-wrapper {
+            background   : none;
+            box-shadow   : none;
+            border-radius: 24px;
+            color        : whitesmoke;
+            animation    : slide-in 1s ease-in-out;
+        }
+    }
+}
+
+//about-us FORM
+.about-us {
+
+    //mission
+    .card-action-about {
+        .card-about {
+            border-color  : #f86f32;
+            color         : #f86f32;
+            border-radius : 16px;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+            animation     : slide-in 1s ease-in-out;
+
+            .icon-about {
+                &:hover {
+                    color: whitesmoke;
+                }
+            }
+
+            &:hover {
+                background-color: #f86f32;
+                color           : whitesmoke;
+            }
+        }
+    }
+
+    //about
+    .about-wrapper {
+        overflow: hidden;
+
+        .about-media {
+            max-width: 600px;
+        }
+
+        .about-content {
+            padding: 40px;
+        }
+    }
+}
+
+//our-services FORM
+.our-services-wrapper {
+    animation: slide-in 3s ease-in-out;
+
+    .card-action-service {
+        background     : url('../../assets/card/border_card.png');
+        background-size: 100% 100%;
+        height         : 400px;
+        padding        : 8px 60px 0;
+        text-align     : center;
+
+        .card-action-media {
+            width : 100%;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+
+        &:hover {
+            background-color: #f86f32;
+            color           : #f86f32;
+        }
+    }
+}
+
+//why-choose-us FORM
+.why-choose-us {
+    .why-choose-us-wrapper {
+        .why-choose-us-form {
+            background   : #434b59;
+            border-radius: 24px;
+            padding      : 48px;
+            color        : whitesmoke;
+        }
+    }
+}
+
+
+@media(max-width: 900px) {
+    .header-wrapper {
+        height        : 400px;
+        padding-bottom: 0;
+    }
+
+    .background-box {
+        .background-media {
+            display: none;
+        }
+    }
+
+    .card-content-wrapper {
+        background: none;
+        box-shadow: none;
+        color     : whitesmoke;
+        animation : slide-in 1s ease-in-out;
+    }
+
+    .about-us {
+        .mission-wrapper {
+            .about-mission {
+                .about-mission-title {
+                    font-size: 32px;
+                }
+
+                .about-mission-content {
+                    font-size: 20px;
+                }
+            }
+
+            .mission-items {
+                justify-content: center;
+
+                .mission-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
