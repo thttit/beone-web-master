@@ -1,5 +1,4 @@
 .footer {
-    // background-image: linear-gradient(to right, #f48c06, #f6821a, #f87927, #f86f32, #f7663b);
     background-color: #101d3e;
     color           : whitesmoke;
 
@@ -48,6 +47,21 @@
             &:hover {
                 color: #c02739;
             }
+        }
+    }
+}
+
+@media(max-width: 900px) {
+    .footer .footer_content {
+        flex-direction: column;
+        align-content : center;
+
+        .item-content {
+            max-width: 100%;
+        }
+
+        .footer-copy-icon {
+            flex-direction: column-reverse;
         }
     }
 }
