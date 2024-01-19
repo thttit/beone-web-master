@@ -16,7 +16,7 @@ function Copyright() {
   return (
     <Typography variant="body1">
       {"Copyright © "}
-      <Link className="link_copyright" href="https://www.ssi.com.vn/">
+      <Link className="link_copyright" href="https://beonetech.vn/">
         BEONE TECHNOLOGY AND SERVICE
       </Link>{" "}
       {new Date().getFullYear()}
@@ -65,6 +65,7 @@ const Footer = () => {
           </Grid>
           <Grid
             item
+            className="footer-copy-icon"
             pt={3}
             xs={12}
             display={"flex"}
