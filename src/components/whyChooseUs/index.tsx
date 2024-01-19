@@ -28,8 +28,8 @@ const WhyChooseUs = () => {
 
   return (
     <Box className="why-choose-us-wrapper">
-      <Grid container spacing={4}>
-        <Grid item xs={6}>
+      <Grid className="why-choose-us-grid" container spacing={4}>
+        <Grid className="why-choose-us-left" item xs={6}>
           <Box className="why-choose-us-title">
             <Typography
               className="title-text"
@@ -57,17 +57,21 @@ const WhyChooseUs = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid className="why-choose-us-right" item xs={6}>
           <Box
             component={"form"}
             id="contact-form"
             className="why-choose-us-form"
           >
-            <Box display={"flex"} justifyContent={"space-between"}>
+            <Box
+              className="form-top"
+              display={"flex"}
+              justifyContent={"space-between"}
+            >
               <Box className="name-form">
                 <Typography variant="subtitle2">Your Name:</Typography>
                 <TextField
-                  sx={{ width: "220px" }}
+                  fullWidth
                   name="name"
                   multiline
                   required
@@ -83,7 +87,7 @@ const WhyChooseUs = () => {
               <Box className="email-form">
                 <Typography variant="subtitle2">Email:</Typography>
                 <TextField
-                  sx={{ width: "220px" }}
+                  fullWidth
                   name="email"
                   multiline
                   required
@@ -99,7 +103,13 @@ const WhyChooseUs = () => {
             </Box>
             <Box mb={4} className="message-form" mt={3}>
               <Typography variant="subtitle2">Message</Typography>
-              <TextField fullWidth name="message" multiline rows={10} required />
+              <TextField
+                fullWidth
+                name="message"
+                multiline
+                rows={10}
+                required
+              />
             </Box>
             <Box display={"flex"} justifyContent={"end"}>
               <Button
