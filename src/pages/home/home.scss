@@ -118,26 +118,7 @@ section {
     }
 }
 
-
-@media(max-width: 900px) {
-    .header-wrapper {
-        height        : 400px;
-        padding-bottom: 0;
-    }
-
-    .background-box {
-        .background-media {
-            display: none;
-        }
-    }
-
-    .card-content-wrapper {
-        background: none;
-        box-shadow: none;
-        color     : whitesmoke;
-        animation : slide-in 1s ease-in-out;
-    }
-
+@media(max-width: 1208px) {
     .about-us {
         padding-bottom: 24px;
 
@@ -175,6 +156,26 @@ section {
             }
         }
     }
+}
+
+@media(max-width: 900px) {
+    .header-wrapper {
+        height        : 400px;
+        padding-bottom: 0;
+    }
+
+    .background-box {
+        .background-media {
+            display: none;
+        }
+    }
+
+    .card-content-wrapper {
+        background: none;
+        box-shadow: none;
+        color     : whitesmoke;
+        animation : slide-in 1s ease-in-out;
+    }
 
     .our-services-wrapper {
         .our-services-title {
@@ -188,6 +189,38 @@ section {
 
             .text {
                 font-size: 14px;
+            }
+        }
+
+        .card-action-service {
+            height: auto;
+        }
+    }
+
+    .why-choose-us-wrapper {
+        .why-choose-us-grid {
+            flex-direction: column;
+
+            .why-choose-us-left {
+                max-width: 100%;
+
+                .why-choose-us-title {
+                    text-align: center;
+
+                    .title-text {
+                        font-size: 32px;
+                    }
+                }
+            }
+
+            .why-choose-us-right {
+                max-width: 100%;
+
+                .why-choose-us-form {
+                    .form-top {
+                        flex-direction: column;
+                    }
+                }
             }
         }
     }
