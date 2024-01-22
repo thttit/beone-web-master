@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useRef } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -26,9 +28,29 @@ const WhyChooseUs = () => {
 
     emailjs.sendForm(serviceID, templateID, formRef.current, publicKey).then(
       (result) => {
+        toast.success("Send email success!", {
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         console.log(result.text);
       },
       (error) => {
+        toast.error("Send email failed!", {
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         console.log(error.text);
       }
     );
