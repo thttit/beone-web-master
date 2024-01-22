@@ -6,26 +6,33 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faEnvelope,
   faRightLong,
 } from "@fortawesome/free-solid-svg-icons";
+import emailjs from "@emailjs/browser";
 
-interface FormData {
-  email: string;
-  name: string;
-  message: string;
-}
 const WhyChooseUs = () => {
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    name: "",
-    message: "",
-  });
+  const formRef: any = useRef<HTMLFormElement>(null);
+  let templateID = "template_dh4ug7e";
+  let publicKey = "mhf8U5lIpo-26Z1cl";
+  let serviceID = "service_jnaw4k6";
 
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs.sendForm(serviceID, templateID, formRef.current, publicKey).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
   return (
     <Box className="why-choose-us-wrapper">
       <Grid className="why-choose-us-grid" container spacing={4}>
@@ -62,6 +69,8 @@ const WhyChooseUs = () => {
             component={"form"}
             id="contact-form"
             className="why-choose-us-form"
+            ref={formRef}
+            onSubmit={sendEmail}
           >
             <Box
               className="form-top"
@@ -72,7 +81,7 @@ const WhyChooseUs = () => {
                 <Typography variant="subtitle2">Your Name:</Typography>
                 <TextField
                   fullWidth
-                  name="name"
+                  name="user_name"
                   multiline
                   required
                   InputProps={{
@@ -88,7 +97,8 @@ const WhyChooseUs = () => {
                 <Typography variant="subtitle2">Email:</Typography>
                 <TextField
                   fullWidth
-                  name="email"
+                  name="user_email"
+                  type="email"
                   multiline
                   required
                   InputProps={{
@@ -114,6 +124,7 @@ const WhyChooseUs = () => {
             <Box display={"flex"} justifyContent={"end"}>
               <Button
                 type="submit"
+                value="Send"
                 sx={{
                   fontSize: "14px",
                   backgroundColor: "#023f6d",
