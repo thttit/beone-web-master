@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { RouterProvider } from "react-router-dom";
 import Router from "./routes";
 import "./theme/theme.scss";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Box, Modal, CircularProgress } from "@mui/material";
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
         </Modal>
       )}
       <RouterProvider router={Router} />
+      <ToastContainer />;
     </Box>
   );
 }
